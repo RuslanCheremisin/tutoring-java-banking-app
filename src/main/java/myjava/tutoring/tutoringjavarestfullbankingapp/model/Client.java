@@ -1,0 +1,28 @@
+package myjava.tutoring.tutoringjavarestfullbankingapp.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer accountNumber;
+    private String name;
+    private Long accountBalance;
+
+    public Client(String name, Long accountBalance) {
+        this.name = name;
+        this.accountBalance = accountBalance;
+    }
+
+}
